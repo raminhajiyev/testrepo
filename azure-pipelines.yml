@@ -22,7 +22,7 @@ jobs:
   - job: MainJob
     displayName: 'Main Job'
     dependsOn: DebugBranchInfo
-    condition: and(succeeded(), not(contains(variables['System.PullRequest.SourceBranch'], 'refs/heads/currency/')))  # Exclude branches starting with 'currency/*'
+    condition: and(succeeded(), not(contains(variables['Build.SourceBranch'], 'refs/heads/currency/'))) 
     steps:
       - script: |
           echo "Running Main Job because the source branch is not excluded."
