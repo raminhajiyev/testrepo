@@ -1,4 +1,3 @@
-#tst
 trigger:
   branches:
     include:
@@ -28,3 +27,4 @@ jobs:
       - script: |
           echo "Running Main Job because the source branch is not excluded."
         displayName: 'Run Main Job'
+#test
