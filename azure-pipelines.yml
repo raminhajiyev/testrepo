@@ -8,7 +8,7 @@ pr:
     include:
       - '*'
     exclude:
-      - 'currency/*'
+      - 'refs/heads/currency/*'
 
 jobs:
   - job: DebugBranchInfo
