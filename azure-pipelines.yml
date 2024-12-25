@@ -9,7 +9,7 @@ trigger:
       - 'VERSION.txt'
       - 'changelog.md'
       - 'packaging/*'
-      - 'documentation/*'
+ 
 
 pr:
   branches:
@@ -24,7 +24,7 @@ pr:
       - 'VERSION.txt'
       - 'changelog.md'
       - 'packaging/*'
-      - 'documentation/*'
+    
 
 jobs:
   - job: TestBranchFilter
