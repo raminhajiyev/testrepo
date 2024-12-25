@@ -2,6 +2,14 @@ trigger:
   branches:
     include:
       - main
+  paths:
+    include:
+      - '*'
+    exclude:
+      - 'VERSION.txt'
+      - 'changelog.md'
+      - 'packaging/*'
+      - 'documentation/*'
 
 pr:
   branches:
@@ -9,22 +17,16 @@ pr:
       - '*'
     exclude:
       - 'currency/*'
+  paths:
+    include:
+      - '*'
+    exclude:
+      - 'VERSION.txt'
+      - 'changelog.md'
+      - 'packaging/*'
+      - 'documentation/*'
 
 jobs:
-  - job: DebugBranchInfo
-    displayName: 'Log PR Branch Info'
+  - job: TestBranchFilter
     steps:
-      - script: |
-          echo "Source Branch: $(System.PullRequest.SourceBranch)"
-          echo "Target Branch: $(System.PullRequest.TargetBranch)"
-        displayName: 'Debug Branch Information'
-      
-  - job: MainJob
-    displayName: 'Main Job'
-    dependsOn: DebugBranchInfo
-    #condition: and(succeeded(), not(contains(variables['Build.SourceBranch'], 'refs/heads/currency/')))  # Exclude branches starting with 'currency/*'
-    steps:
-      - script: |
-          echo "Running Main Job because the source branch is not excluded."
-        displayName: 'Run Main Job'
-#test
+      - script: echo "Testing branch and path filters"
