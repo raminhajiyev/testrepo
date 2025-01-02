@@ -16,6 +16,7 @@ pr:
       - '*'
     exclude:
       - 'currency/*'
+      - main
   # paths:
   #   include:
   #     - '*'
