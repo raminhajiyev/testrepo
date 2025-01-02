@@ -2,6 +2,13 @@ trigger:
   branches:
     include:
       - main
+  paths:
+    include:
+      - '*'
+    exclude:
+      - 'VERSION.txt'
+      - 'changelog.md'
+      - 'packaging/*'
 
 pr:
   branches:
@@ -9,22 +16,13 @@ pr:
       - '*'
     exclude:
       - 'currency/*'
+      - main
+  # paths:
+  #   include:
+  #     - '*'
+  #   exclude:
+  #     - 'VERSION.txt'
+  #     - 'changelog.md'
+  #     - 'packaging/*'
 
-jobs:
-  - job: DebugBranchInfo
-    displayName: 'Log PR Branch Info'
-    steps:
-      - script: |
-          echo "Source Branch: $(System.PullRequest.SourceBranch)"
-          echo "Target Branch: $(System.PullRequest.TargetBranch)"
-        displayName: 'Debug Branch Information'
-      
-  - job: MainJob
-    displayName: 'Main Job'
-    dependsOn: DebugBranchInfo
-    #condition: and(succeeded(), not(contains(variables['Build.SourceBranch'], 'refs/heads/currency/')))  # Exclude branches starting with 'currency/*'
-    steps:
-      - script: |
-          echo "Running Main Job because the source branch is not excluded."
-        displayName: 'Run Main Job'
-#test
+
