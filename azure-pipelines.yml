@@ -16,13 +16,13 @@ pr:
       - '*'
     exclude:
       - 'currency/*'
-  paths:
-    include:
-      - '*'
-    exclude:
-      - 'VERSION.txt'
-      - 'changelog.md'
-      - 'packaging/*'
+  # paths:
+  #   include:
+  #     - '*'
+  #   exclude:
+  #     - 'VERSION.txt'
+  #     - 'changelog.md'
+  #     - 'packaging/*'
 
 
 jobs:
