@@ -1,5 +1,1 @@
-Testing pipeline exclusion
 
-memetest
-sadda
-asdasd

@@ -26,7 +26,3 @@ pr:
   #     - 'packaging/*'
 
 
-jobs:
-  - job: TestBranchFilter
-    steps:
-      - script: echo "Testing branch and path filters"
