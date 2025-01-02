@@ -23,5 +23,3 @@ pr:
   #     - 'VERSION.txt'
   #     - 'changelog.md'
   #     - 'packaging/*'
-
-
